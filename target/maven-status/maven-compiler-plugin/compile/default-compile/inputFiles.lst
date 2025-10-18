@@ -1,0 +1,11 @@
+/workspace/src/main/java/com/restaurant/pos/MainApp.java
+/workspace/src/main/java/com/restaurant/pos/db/Database.java
+/workspace/src/main/java/com/restaurant/pos/service/ForecastService.java
+/workspace/src/main/java/com/restaurant/pos/service/InventoryService.java
+/workspace/src/main/java/com/restaurant/pos/service/MenuService.java
+/workspace/src/main/java/com/restaurant/pos/service/OrderService.java
+/workspace/src/main/java/com/restaurant/pos/service/PromoService.java
+/workspace/src/main/java/com/restaurant/pos/ui/AnalyticsTab.java
+/workspace/src/main/java/com/restaurant/pos/ui/InventoryTab.java
+/workspace/src/main/java/com/restaurant/pos/ui/OrderTab.java
+/workspace/src/main/java/com/restaurant/pos/ui/OrdersTab.java
