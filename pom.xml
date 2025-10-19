@@ -14,8 +14,8 @@
     <javafx.version>25.0.1</javafx.version>
     <slf4j.version>2.0.13</slf4j.version>
     <sqlite.jdbc.version>3.46.0.0</sqlite.jdbc.version>
-    <!-- Resolve platform-specific JavaFX native artifacts; default for Linux x86_64 -->
-    <javafx.platform>linux</javafx.platform>
+    <!-- Resolve platform-specific JavaFX native artifacts; default for Windows x86_64 -->
+    <javafx.platform>win</javafx.platform>
   </properties>
 
   <dependencies>
@@ -94,36 +94,6 @@
   </build>
 
   <profiles>
-    <!-- Linux AArch64 -->
-    <profile>
-      <id>linux-aarch64</id>
-      <activation>
-        <os name="Linux" arch="aarch64"/>
-      </activation>
-      <properties>
-        <javafx.platform>linux-aarch64</javafx.platform>
-      </properties>
-    </profile>
-    <!-- macOS AArch64 (Apple Silicon) -->
-    <profile>
-      <id>mac-aarch64</id>
-      <activation>
-        <os family="mac" arch="aarch64"/>
-      </activation>
-      <properties>
-        <javafx.platform>mac-aarch64</javafx.platform>
-      </properties>
-    </profile>
-    <!-- macOS x86_64 -->
-    <profile>
-      <id>mac</id>
-      <activation>
-        <os family="mac" arch="x86_64"/>
-      </activation>
-      <properties>
-        <javafx.platform>mac</javafx.platform>
-      </properties>
-    </profile>
     <!-- Windows AArch64 -->
     <profile>
       <id>win-aarch64</id>
@@ -132,16 +102,6 @@
       </activation>
       <properties>
         <javafx.platform>win-aarch64</javafx.platform>
-      </properties>
-    </profile>
-    <!-- Windows x86_64 -->
-    <profile>
-      <id>win</id>
-      <activation>
-        <os family="windows" arch="x86_64"/>
-      </activation>
-      <properties>
-        <javafx.platform>win</javafx.platform>
       </properties>
     </profile>
   </profiles>
