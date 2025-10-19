@@ -9,21 +9,22 @@ A JavaFX-based restaurant ordering and inventory management system with:
 - Analytics with simple sales forecasting
 - SQLite persistence (file `data/pos.db`)
 
-## Prerequisites
-- Java 21+
+## Prerequisites (Windows only)
+- Java 25+
 - Maven 3.9+
 
 ## Run
-```bash
+```bat
 mvn -q -DskipTests package
 mvn -q javafx:run -Dexec.mainClass=com.restaurant.pos.MainApp
 ```
 
 If the JavaFX plugin has trouble on your platform, you can run:
-```bash
-java --module-path ~/.m2/repository/org/openjfx/javafx-controls/21.0.5 --add-modules javafx.controls,javafx.fxml \
-     -cp target/pos-1.0-SNAPSHOT.jar:$(dependency:list -DincludeScope=runtime -DoutputAbsoluteArtifactFilename=true -DincludeTypes=jar -DexcludeTransitive=false -DappendOutput=false | grep ".jar" | tr '\n' ':') \
-     com.restaurant.pos.MainApp
+```bat
+REM If you prefer running directly with Java (Windows)
+set JFX_VER=25.0.1
+set JFX_MP=%USERPROFILE%\.m2\repository\org\openjfx\javafx-controls\%JFX_VER%
+java --module-path "%JFX_MP%" --add-modules javafx.controls,javafx.fxml -cp "target\pos-1.0-SNAPSHOT.jar" com.restaurant.pos.MainApp
 ```
 
 ## Notes
