@@ -67,7 +67,9 @@ public final class Database {
                             "tax_cents INTEGER NOT NULL, " +
                             "total_cents INTEGER NOT NULL, " +
                             "payment_method TEXT NOT NULL, " +
-                            "status TEXT NOT NULL DEFAULT 'PAID'" +
+                            "status TEXT NOT NULL DEFAULT 'PAID', " +
+                            "discount_type TEXT DEFAULT 'REGULAR', " +
+                            "cogs_cents INTEGER DEFAULT 0" +
                             ")");
 
                     st.addBatch("CREATE TABLE IF NOT EXISTS order_item (" +
@@ -105,6 +107,16 @@ public final class Database {
                             "ref_id INTEGER, " +
                             "created_at TEXT NOT NULL, " +
                             "FOREIGN KEY(menu_item_id) REFERENCES menu_item(id) ON DELETE CASCADE" +
+                            ")");
+
+                    st.addBatch("CREATE TABLE IF NOT EXISTS audit_log (" +
+                            "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                            "action_type TEXT NOT NULL, " +
+                            "entity_type TEXT NOT NULL, " +
+                            "entity_id INTEGER, " +
+                            "description TEXT NOT NULL, " +
+                            "user_role TEXT DEFAULT 'STAFF', " +
+                            "created_at TEXT NOT NULL" +
                             ")");
 
                     st.executeBatch();
