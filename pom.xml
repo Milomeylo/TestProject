@@ -45,6 +45,13 @@
       <classifier>${javafx.platform}</classifier>
     </dependency>
 
+    <!-- MaterialFX -->
+    <dependency>
+      <groupId>io.github.palexdev</groupId>
+      <artifactId>materialfx</artifactId>
+      <version>11.17.0</version>
+    </dependency>
+
     <!-- SQLite JDBC driver -->
     <dependency>
       <groupId>org.xerial</groupId>
